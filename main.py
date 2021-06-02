@@ -53,6 +53,10 @@ def draw(index,data,path):
 def main():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     st.title('TCP拥塞控制算法展示平台')
+
+    st.subheader("算法对比表:")
+    st.image("compare.png")
+
     # 显示拓扑
     st.subheader('拓扑网络图:')
     net = Image.open('bupt_c.png')
@@ -126,6 +130,15 @@ def main():
     else :
         st.subheader('CUBIC:')
         draw(CUBIC_index, CUBIC_data, 'CUBIC_data.txt')
+    st.title("\n")
+    st.title("\n")
+    st.title("\n")
+
+    connection = st.checkbox("联系我")
+    if connection:
+        st.write("开发者：陈立伟")
+        st.write("邮箱：641745039@qq.com")
+
 
 if __name__ == '__main__':
     main()
